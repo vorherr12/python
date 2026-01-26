@@ -1,116 +1,124 @@
 <!DOCTYPE html>
-<html lang="fr" data-color-mode="light" data-light-theme="light" data-dark-theme="dark">
+<html lang="fr" data-color-mode="dark" data-dark-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vorherr12/python - GitHub Style</title>
-    <link href="https://unpkg.com/@primer/css@^21.0.0/dist/primer.css" rel="stylesheet" />
+    <title>Projets Python - Vorherr12</title>
+    
+    <link href="https://unpkg.com/@primer/css@^20.2.4/dist/primer.css" rel="stylesheet" />
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/build.css" rel="stylesheet">
+
     <style>
-        body { background-color: #ffffff; }
-        .repo-header { background-color: #f6f8fa; padding-top: 16px; border-bottom: 1px solid #d0d7de; }
-        .file-box { border: 1px solid #d0d7de; border-radius: 6px; margin-top: 16px; }
-        .file-header { background-color: #f6f8fa; border-bottom: 1px solid #d0d7de; padding: 16px; border-top-left-radius: 6px; border-top-right-radius: 6px; }
-        .file-row { border-top: 1px solid #d0d7de; padding: 8px 16px; display: flex; align-items: center; }
-        .file-row:first-child { border-top: none; }
-        .file-row:hover { background-color: #f6f8fa; }
-        .avatar-small { border-radius: 50%; width: 20px; height: 20px; vertical-align: middle; margin-right: 4px; }
-        .octicon { fill: #57606a; margin-right: 10px; }
-        .octicon-file-directory { fill: #54aeff; }
+        /* Ajustements pour forcer le fond sombre global */
+        body {
+            background-color: #0d1117; /* Le fond sombre classique GitHub */
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+        
+        .container-custom {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Style des cartes de projets */
+        .project-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: border-color 0.2s, transform 0.1s;
+        }
+
+        .project-card:hover {
+            border-color: #8b949e;
+            transform: translateY(-2px);
+        }
+
+        .repo-title {
+            color: #58a6ff; /* Le bleu des liens GitHub */
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .repo-title:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
-    <div class="Header" style="background-color: #24292f; padding: 16px; color: white; display: flex; align-items: center;">
-        <svg height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true" style="fill: white; margin-right: 16px;">
-            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-        <span style="font-weight: bold; font-size: 14px;">GitHub Pages</span>
-    </div>
-
-    <div class="repo-header">
-        <div class="container-xl px-3 px-md-4 px-lg-5">
-            <div class="d-flex flex-items-center mb-3">
-                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-repo mr-2">
-                    <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+    <header class="Header" style="background-color: #161b22; border-bottom: 1px solid #30363d;">
+        <div class="Header-item">
+            <a href="https://github.com/vorherr12" class="Header-link f4 d-flex flex-items-center">
+                <svg height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true" style="fill: white; margin-right: 16px;">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
                 </svg>
-                <span class="f3 color-fg-muted mr-1"><a href="https://github.com/vorherr12" class="Link--primary text-normal">vorherr12</a></span>
-                <span class="f3 color-fg-muted mr-1">/</span>
-                <strong class="f3"><a href="https://github.com/vorherr12/python" class="Link--primary">python</a></strong>
-                <span class="Label Label--secondary ml-2">Public</span>
-            </div>
-
-            <nav class="UnderlineNav UnderlineNav--full">
-                <div class="UnderlineNav-body">
-                    <a class="UnderlineNav-item selected" aria-current="page" href="#">
-                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-code UnderlineNav-octicon">
-                            <path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"></path>
-                        </svg>
-                        Code
-                    </a>
-                    <a class="UnderlineNav-item" href="#">
-                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-issue-opened UnderlineNav-octicon">
-                            <path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path><path fill-rule="evenodd" d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"></path>
-                        </svg>
-                        Issues
-                    </a>
-                    <a class="UnderlineNav-item" href="#">
-                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-git-pull-request UnderlineNav-octicon">
-                            <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 114.5 0 2.25 2.25 0 01-4.5 0zm2.25 7.5a.75.75 0 100 1.5.75.75 0 000-1.5zM.75 10.75a2.25 2.25 0 114.5 0 2.25 2.25 0 01-4.5 0zM12.25 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zM10 3.25a2.25 2.25 0 114.5 0 2.25 2.25 0 01-4.5 0zM11.5 6h1.25c1.24 0 2.25 1.01 2.25 2.25V16h-1.5v-7.75a.75.75 0 00-.75-.75H11.5V6zM6 13.25a.75.75 0 00-1.5 0A2.25 2.25 0 012.25 11h-.75a3.75 3.75 0 007.5 0h-.75a.75.75 0 00-1.5 0zM6 6h1.5V4.5H6a2.25 2.25 0 00-2.25 2.25v1.86a3.75 3.75 0 011.5 0V6.75A.75.75 0 016 6z"></path>
-                        </svg>
-                        Pull requests
-                    </a>
-                </div>
-            </nav>
+                <span>vorherr12 / <strong>python</strong></span>
+            </a>
         </div>
-    </div>
+    </header>
 
-    <div class="container-xl px-3 px-md-4 px-lg-5 mt-4">
+    <div class="container-custom">
         
-        <div class="file-box">
-            <div class="file-header d-flex flex-items-center">
-                <div class="avatar-small" style="background-color: #ddd;"></div>
-                <span class="text-bold ml-2">vorherr12</span>
-                <span class="color-fg-muted ml-2">Mise à jour du dépôt</span>
-                <span class="color-fg-muted ml-auto f6">il y a quelques instants</span>
-            </div>
-            
-            <div class="file-row">
-                <svg aria-label="File" class="octicon octicon-file" height="16" viewBox="0 0 16 16" version="1.1" width="16"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path></svg>
-                <span class="css-truncate css-truncate-target"><a href="https://github.com/vorherr12/python/blob/main/.gitattributes" class="Link--primary text-bold" style="text-decoration: none; color: #24292f;">.gitattributes</a></span>
-                <span class="color-fg-muted ml-auto f6">Configuration Git</span>
-            </div>
-
-             <div class="file-row">
-                <svg aria-label="File" class="octicon octicon-file" height="16" viewBox="0 0 16 16" version="1.1" width="16"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path></svg>
-                <span class="css-truncate css-truncate-target"><a href="#" class="Link--primary text-bold" style="text-decoration: none; color: #24292f;">index.html</a></span>
-                <span class="color-fg-muted ml-auto f6">Page d'accueil (ce fichier)</span>
-            </div>
-
-            <div class="file-row">
-                <svg aria-label="File" class="octicon octicon-file" height="16" viewBox="0 0 16 16" version="1.1" width="16"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path></svg>
-                <span class="css-truncate css-truncate-target"><a href="python.html" class="Link--primary text-bold" style="text-decoration: none; color: #24292f;">python.html</a></span>
-                <span class="color-fg-muted ml-auto f6">Fichier HTML</span>
-            </div>
-
-            <div class="file-row">
-                <svg aria-label="File" class="octicon octicon-book" height="16" viewBox="0 0 16 16" version="1.1" width="16" style="fill: #bf3989"><path fill-rule="evenodd" d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.244a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.571a1 1 0 00-.915.087l-.75.466a.25.25 0 01-.264 0l-.75-.466a1 1 0 00-.915-.087H.75a.75.75 0 01-.75-.75V1.75zm1.5 9.606v.734a2.25 2.25 0 002.25 2.25h3.91l.24-.15-.24-.15h-3.91a.75.75 0 01-.75-.75v-1.934zm0-8.356v6.923c.666-.34 1.432-.523 2.25-.523h4.5v-6H3.75A2.25 2.25 0 001.5 3zm13 8.356v-6h-4.5v6h4.5c.818 0 1.584.183 2.25.523v-6.923a2.25 2.25 0 00-2.25-1.433h-4.5V11.34l.24.15.24.15h3.91a.75.75 0 01.75.75v.734z"></path></svg>
-                <span class="css-truncate css-truncate-target"><a href="https://github.com/vorherr12/python/blob/main/python.ipynb" class="Link--primary text-bold" style="text-decoration: none; color: #24292f;">python.ipynb</a></span>
-                <span class="color-fg-muted ml-auto f6">Jupyter Notebook</span>
-            </div>
-
+        <div class="text-center mb-6">
+            <h1 class="h1 text-white">Mes Projets Python</h1>
+            <p class="f3 color-fg-muted">Analyses de données et scripts</p>
         </div>
 
-        <div class="Box mt-4 p-4">
-            <h3 class="h3">À propos</h3>
-            <p>Dépôt de fichiers Python et Notebooks.</p>
+        <div class="project-card">
+            <div class="d-flex flex-justify-between flex-items-center mb-2">
+                <h3 class="h3 mb-0">
+                    <a href="python.html" class="repo-title">Rapport d'analyse Web</a>
+                </h3>
+                <span class="Label Label--secondary">HTML</span>
+            </div>
+            <p class="color-fg-muted mb-3">
+                Consultation directe du rendu web généré depuis mes scripts.
+            </p>
+            <a href="python.html" class="btn btn-primary btn-sm">
+                Voir la page
+            </a>
+        </div>
+
+        <div class="project-card">
+            <div class="d-flex flex-justify-between flex-items-center mb-2">
+                <h3 class="h3 mb-0">
+                    <a href="https://github.com/vorherr12/python/blob/main/python.ipynb" class="repo-title">Notebook Jupyter</a>
+                </h3>
+                <span class="Label Label--attention">Notebook</span>
+            </div>
+            <p class="color-fg-muted mb-3">
+                Le code source complet, les cellules d'exécution et les graphiques bruts.
+            </p>
+            <a href="https://github.com/vorherr12/python/blob/main/python.ipynb" class="btn btn-outline btn-sm">
+                Voir sur GitHub
+            </a>
+        </div>
+
+        <div class="Box Box--condensed mt-6" style="background-color: #0d1117; border-color: #30363d;">
+            <div class="Box-header" style="background-color: #161b22;">
+                <h3 class="Box-title">
+                    Code Source
+                </h3>
+            </div>
+            <div class="Box-body">
+                <p>Accédez à l'intégralité des fichiers sources sur le dépôt GitHub.</p>
+                <a href="https://github.com/vorherr12/python" class="btn btn-sm">
+                    <svg class="octicon octicon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+                    Vers le dépôt vorherr12/python
+                </a>
+            </div>
         </div>
 
     </div>
 
-    <div class="footer container-xl px-3 px-md-4 px-lg-5 mt-5 border-top pt-3 pb-3 color-fg-muted f6 text-center">
-        &copy; 2026 GitHub, Inc. simulé pour GitHub Pages.
-    </div>
+    <footer class="text-center color-fg-muted py-4 f6">
+        &copy; vorherr12 - Hébergé sur GitHub Pages
+    </footer>
 
 </body>
 </html>
